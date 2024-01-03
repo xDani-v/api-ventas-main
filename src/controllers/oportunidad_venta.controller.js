@@ -85,6 +85,18 @@ const getvendidos = async (req, res) => {
     }
 };
 
+const getven = async (req, res) => {
+    try {
+        const results = await db.query('SELECT * FROM obtener_negocios_vendidos();',
+            {
+                type: db.QueryTypes.SELECT
+            });
+        res.status(200).json(results);
+    } catch (error) {
+        res.status(500).send({ message: error.message });
+    }
+};
+
 export default {
     create,
     findAll,
@@ -92,5 +104,6 @@ export default {
     update,
     deleted,
     cambiarEstado,
-    getvendidos
+    getvendidos,
+    getven
 };

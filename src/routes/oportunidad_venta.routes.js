@@ -9,6 +9,7 @@ router.post('/', oportunidadVentaController.create);
 // Retrieve all Oportunidad_de_venta
 router.get('/', oportunidadVentaController.findAll);
 router.get('/vendidos', oportunidadVentaController.getvendidos);
+router.get('/ven', oportunidadVentaController.getven);
 router.get('/:id', oportunidadVentaController.findOne);
 
 // Update a Oportunidad_de_venta with id
